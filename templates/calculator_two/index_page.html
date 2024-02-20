@@ -1,0 +1,40 @@
+{% extends 'base/base.html' %}
+
+{% block header %}
+  <h1>Калькулятор</h1>
+  <hr />
+{% endblock %}
+
+{% block main %}
+  <section>
+    <h2>Форма для отправки данных на сервер</h2>
+    <form action="/" method="post">
+      {% csrf_token %}
+
+      <label for="number_one">Первое число:</label>
+      <input type="number" name="number_one" />
+      <br />
+      <label for="number_two">Второе число:</label>
+      <input type="number" name="number_two" />
+      <br />
+      <button type="submit">Отправить данные на сервер</button>
+    </form>
+    <hr />
+  </section>
+  <section>
+    <h2>Данные с сервера</h2>
+    <ul>
+      {% for data_item in data %}
+        <li>
+          <span>ID Операции -- {{ data_item.id }}:</span>
+          <ul>
+            <li>Первое число -- {{ data_item.number_one }};</li>
+            <li>Второе число -- {{ data_item.number_two }};</li>
+            <li>Сумма чисел -- {{ data_item.answer }}.</li>
+          </ul>
+        </li>
+      {% endfor %}
+    </ul>
+    <hr />
+  </section>
+{% endblock %}

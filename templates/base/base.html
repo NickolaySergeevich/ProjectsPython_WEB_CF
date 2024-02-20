@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    {% block links %}
+    {% endblock %}
+    <title>{{ page_name }}</title>
+  </head>
+  <body>
+    <header>
+      {% block header %}
+      {% endblock %}
+    </header>
+    <main>
+      {% block main %}
+      {% endblock %}
+    </main>
+    <footer>
+      {% block footer %}
+      {% endblock %}
+    </footer>
+  </body>
+</html>
