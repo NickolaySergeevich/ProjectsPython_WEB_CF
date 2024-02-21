@@ -16,6 +16,4 @@ def index_page(request):
             number_one=number_one, number_two=number_two, answer=answer
         ).save()
 
-    context["data"] = CalculatorHistory.objects.all()
-
-    return render(request, "calculator_two/index_page.html", context)
+    return render(request, "calculator_three/index_page.html", context)
