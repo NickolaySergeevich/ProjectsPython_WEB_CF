@@ -23,7 +23,7 @@
   </section>
   <section>
     <h2>Фильтрация данных с сервера</h2>
-    <hr />
+    <h3>Выбор "Какие данные вам нужны?"</h3>
     <form action="/calculator_three/" method="get">
       <label for="select_all">Выбрать все данные:</label>
       <input type="radio" name="select_data" value="select_all" checked />
@@ -36,5 +36,19 @@
       <br />
       <button type="submit">Получить данные от сервера</button>
     </form>
+    <h3>Сами данные</h3>
+    <ul>
+      {% for data_item in data %}
+        <li>
+          <span>ID записи -- {{ data_item.id }}:</span>
+          <ul>
+            <li>Первое число -- {{ data_item.number_one }};</li>
+            <li>Второе число -- {{ data_item.number_two }};</li>
+            <li>Сумма -- {{ data_item.answer }}.</li>
+          </ul>
+        </li>
+      {% endfor %}
+    </ul>
+    <hr />
   </section>
 {% endblock %}
