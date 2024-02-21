@@ -8,7 +8,7 @@
 {% block main %}
   <section>
     <h2>Форма для отправки данных на сервер</h2>
-    <form action="/calculcator_three/" method="post">
+    <form action="/calculator_three/" method="post">
       {% csrf_token %}
 
       <label for="number_one">Первое число:</label>
@@ -24,5 +24,17 @@
   <section>
     <h2>Фильтрация данных с сервера</h2>
     <hr />
+    <form action="/calculator_three/" method="get">
+      <label for="select_all">Выбрать все данные:</label>
+      <input type="radio" name="select_data" value="select_all" checked />
+      <br />
+      <label for="select_positive">Только положительные ответы:</label>
+      <input type="radio" name="select_data" value="select_positive" />
+      <br />
+      <label for="select_negative">Только отрицательные ответы:</label>
+      <input type="radio" name="select_data" value="select_negative" />
+      <br />
+      <button type="submit">Получить данные от сервера</button>
+    </form>
   </section>
 {% endblock %}
