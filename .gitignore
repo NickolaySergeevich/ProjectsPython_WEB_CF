@@ -1,6 +1,5 @@
 /.venv
 /.vscode
-/db.sqlite3
 calculator_three/migrations/__init__.py
 main_server/__pycache__/settings.cpython-312.pyc
 calculator_three/__pycache__/__init__.cpython-312.pyc
