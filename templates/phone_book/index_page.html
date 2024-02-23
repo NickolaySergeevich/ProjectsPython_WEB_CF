@@ -1,4 +1,9 @@
 {% extends 'base/base.html' %}
+{% load static %}
+
+{% block links %}
+  <link rel="stylesheet" href="{% static 'phone_book/css/index_page.css' %}" />
+{% endblock %}
 
 {% block header %}
   <h1>Телефонная книга</h1>
