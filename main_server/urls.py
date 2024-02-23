@@ -21,10 +21,12 @@ from django.urls import path
 from calculator_three import views as calculator_three_views
 from calculator_two import views as calculator_two_views
 from menu import views as menu_views
+from phone_book import views as phone_book_views
 
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("", menu_views.index_page),
     path("calculator_two/", calculator_two_views.index_page),
     path("calculator_three/", calculator_three_views.index_page),
+    path("phone_book/", phone_book_views.index_page),
 ]

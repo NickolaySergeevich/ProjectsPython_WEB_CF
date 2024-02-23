@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     "calculator_two",
     "calculator_three",
     "menu",
+    "phone_book",
 ]
 
 MIDDLEWARE = [

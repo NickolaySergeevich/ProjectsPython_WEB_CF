@@ -10,8 +10,12 @@ def index_page(request):
                 "text": "Калькулятор для второго урока на калькулятор",
             },
             {
-                "link": "/calculator_three",
+                "link": "/calculator_three/",
                 "text": "Калькулятор для третьего урока на калькулятор",
+            },
+            {
+                "link": "/phone_book/",
+                "text": "Проект 'Телефонная книга'",
             },
         ]
     }
