@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "calculator_two",
     "calculator_three",
+    "menu",
 ]
 
 MIDDLEWARE = [
