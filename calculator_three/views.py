@@ -23,5 +23,7 @@ def index_page(request):
             context["data"] = CalculatorHistory.objects.filter(answer__gt=0)
         elif user_choose == "select_negative":
             context["data"] = CalculatorHistory.objects.filter(answer__lt=0)
+        elif user_choose == "select_list":
+            context["data"] = CalculatorHistory.objects.filter(answer__in=[30, 40, 57])
 
     return render(request, "calculator_three/index_page.html", context)
