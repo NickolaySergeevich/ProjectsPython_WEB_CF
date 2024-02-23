@@ -1,1 +1,65 @@
 {% extends 'base/base.html' %}
+
+{% block header %}
+  <h1>Телефонная книга</h1>
+  <hr />
+{% endblock %}
+
+{% block main %}
+  <div class="form-place">
+    <form action="/phone_book/" method="post">
+      {% csrf_token %}
+
+      <label for="contact_name">Имя контакта:</label>
+      <input type="text" name="contact_name" />
+      <br />
+      <label for="contact_surname">Фамилия контакта:</label>
+      <input type="text" name="contact_surname" />
+      <br />
+      <label for="contact_phone">Номер теоефона контакта:</label>
+      <input type="tel" name="contact_phone" />
+      <br />
+      <label for="contact_note">Заметка для контакта:</label>
+      <input type="text" name="contact_note" />
+      <br />
+      <button type="submit">Сохранить контакт в телефонную книгу</button>
+    </form>
+  </div>
+  <div class="form-place">
+    <form action="/phone_book/" method="get">
+      <label for="filter_all">Показать контакты полностью</label>
+      <input type="radio" name="radio_filter" value="filter_all" checked />
+      <br />
+      <label for="filter_name">Фильтрация по имени:</label>
+      <input type="radio" name="radio_filter" value="filter_name" />
+      <br />
+      <label for="filter_surname">Фильтрация по фамилии:</label>
+      <input type="radio" name="radio_filter" value="filter_surname" />
+      <br />
+      <button type="submit">Отфильтровать данные</button>
+    </form>
+  </div>
+
+  {% if filter_all %}
+    {% for data_item in data %}
+      <div class="card">
+        <h2>Имя контака -- {{ data_item.contact_name }}</h2>
+        <h3>Фамилия контакта -- {{ data_item.contact_surname }}</h3>
+        <p>Номер телефона контака -- {{ data_item.contact_phone }}</p>
+        <p>Заметка к контакту -- {{ data_item.contact_note }}</p>
+      </div>
+    {% endfor %}
+  {% elif filter_name %}
+    <ul>
+      {% for data_item in data %}
+        <li>{{ data_item.contact_name }}</li>
+      {% endfor %}
+    </ul>
+  {% elif filter_surname %}
+    <ul>
+      {% for data_item in data %}
+        <li>{{ data_item.contact_surname }}</li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+{% endblock %}
