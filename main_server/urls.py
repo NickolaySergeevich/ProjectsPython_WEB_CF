@@ -18,11 +18,13 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-from calculator_three import views as v_three
-from calculator_two import views as v_two
+from calculator_three import views as calculator_three_views
+from calculator_two import views as calculator_two_views
+from menu import views as menu_views
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path("", v_two.index_page),
-    path("calculator_three/", v_three.index_page),
+    path("", menu_views.index_page),
+    path("calculator_two/", calculator_two_views.index_page),
+    path("calculator_three/", calculator_three_views.index_page),
 ]
