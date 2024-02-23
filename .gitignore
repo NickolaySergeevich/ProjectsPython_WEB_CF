@@ -1,7 +1,4 @@
 /.venv
 /.vscode
-calculator_three/migrations/__init__.py
-calculator_three/migrations/0001_initial.py
-calculator_three/migrations/__pycache__/*
 calculator_three/__pycache__/*
 main_server/*
