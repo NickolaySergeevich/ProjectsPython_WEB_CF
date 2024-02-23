@@ -17,6 +17,10 @@ def index_page(request):
                 "link": "/phone_book/",
                 "text": "Проект 'Телефонная книга'",
             },
+            {
+                "link": "/notes/",
+                "text": "Проект 'Заметки'",
+            },
         ]
     }
 

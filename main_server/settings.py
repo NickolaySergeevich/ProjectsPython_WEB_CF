@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     "calculator_three",
     "menu",
     "phone_book",
+    "notes",
 ]
 
 MIDDLEWARE = [
