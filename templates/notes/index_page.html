@@ -46,8 +46,8 @@
         <li>
           <span>{{ data_item.note_header }} -- {{ data_item.note_description }}:</span>
           <ul>
-            {% for note_supplement in data_item.note_supplemets %}
-              <li>{{ note_supplement }};</li>
+            {% for item in data_item.note_supplements %}
+              <li>{{ item.note_supplement }};</li>
             {% endfor %}
           </ul>
         </li>
