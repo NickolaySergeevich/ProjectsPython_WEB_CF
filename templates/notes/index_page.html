@@ -1,0 +1,57 @@
+{% extends 'base/base.html' %}
+
+{% block header %}
+  <h1>Проект "Заметки"</h1>
+  <hr />
+{% endblock %}
+
+{% block main %}
+  <section>
+    <h2>Добавление заметки</h2>
+    <form action="/notes/" method="post">
+      {% csrf_token %}
+
+      <label for="note_header">Заголовок заметки:</label>
+      <input type="text" name="note_header" required />
+      <br />
+      <label for="note_description">Описание заметки:</label>
+      <input type="text" name="note_description" required />
+      <br />
+      <p>Дополнения к заметке:</p>
+      <ul>
+        <li>
+          <input type="text" name="note_supplement_one" />
+        </li>
+        <li>
+          <input type="text" name="note_supplement_two" />
+        </li>
+        <li>
+          <input type="text" name="note_supplement_three" />
+        </li>
+        <li>
+          <input type="text" name="note_supplement_four" />
+        </li>
+        <li>
+          <input type="text" name="note_supplement_five" />
+        </li>
+      </ul>
+      <button type="submit">Сохранить заметку</button>
+    </form>
+    <hr />
+  </section>
+  <section>
+    <h2>Список заметок</h2>
+    <ul>
+      {% for data_item in data %}
+        <li>
+          <span>{{ data_item.note_header }} -- {{ data_item.note_description }}:</span>
+          <ul>
+            {% for note_supplement in data_item.note_supplemets %}
+              <li>{{ note_supplement }};</li>
+            {% endfor %}
+          </ul>
+        </li>
+      {% endfor %}
+    </ul>
+  </section>
+{% endblock %}
